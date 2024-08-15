@@ -6,8 +6,10 @@ import Public from "./components/mainpage/public";
 
 export default function Home() {
   return (
-    // <CustomHome />
-    <Sidebar/>
+    <CustomHome />
+    // <Sidebar/>
+    
     // <Public/>
   );
 }
+ 

@@ -7,7 +7,7 @@ const Login = () => {
     const router = useRouter();
 
     const handleLoginClick = () => {
-      router.push('./components/mainpage'); 
+      router.push('./components/mainpage?page=1'); 
     };
     return (
         <div className='p-24'>
