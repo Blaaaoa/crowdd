@@ -59,12 +59,12 @@ const Home = () => {
 
           <div className='col-span-5 mt-200'>
 
-            <div className='rounded-full bg-gray-500 w-60 h-70 relative '>
+            <div className=' '>
               <img
                 src="https://envs.sh/iB1.png"
                 alt="nothng"
-                width={300}
-                height={300} />
+                width={500}
+                height={500} />
             </div>
           </div>
           <div className='ml-100 mt-10'>
