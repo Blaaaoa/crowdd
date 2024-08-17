@@ -2,7 +2,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { StreamingTextResponse, GoogleGenerativeAIStream, Message } from "ai";
 import { GoogleGenerativeAI, Content } from "@google/generative-ai";
-import { generateText } from 'ai';
 // IMPORTANT! Set the runtime to edge
 
 export async function POST(req: NextRequest) {
@@ -15,5 +14,5 @@ export async function POST(req: NextRequest) {
   const streamingResponse = await model.generateContentStream(prompt);
 
   // Use the new recommended class/function
-  return new StreamingTextResponse(streamingResponse);
+  return new streamTextResponse(GoogleGenerativeAIStream(genAI));
 }
