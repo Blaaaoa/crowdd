@@ -1,13 +1,12 @@
 
-
-
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
- 
+import { StreamingTextResponse, GoogleGenerativeAIStream, Message } from "ai";
+import { GoogleGenerativeAI, Content } from "@google/generative-ai";
+import { generateText } from 'ai';
+// IMPORTANT! Set the runtime to edge
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: NextRequest) {
   const reqBody = await req.json();
-  console.log(reqBody);
   const prompt = reqBody.data.prompt;
 
   const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
@@ -15,6 +14,6 @@ export async function POST(req: Request, res: Response) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   const streamingResponse = await model.generateContentStream(prompt);
 
-  // return new StreamingTextResponse(GoogleGenerativeAIStream(streamingResponse));
-
+  // Use the new recommended class/function
+  return new 
 }
