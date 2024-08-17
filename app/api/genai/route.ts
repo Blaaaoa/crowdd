@@ -15,5 +15,5 @@ export async function POST(req: NextRequest) {
   const streamingResponse = await model.generateContentStream(prompt);
 
   // Use the new recommended class/function
-  return new 
+  return new StreamingTextResponse(streamingResponse);
 }
