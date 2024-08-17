@@ -17,13 +17,20 @@ const Public = () => {
 
             {/* <RenderForm /> */}
             {RenderForm()}
+            {RenderMessage()}
+            
             {JSON.stringify(messages)}
+            
+
+            
+
         </main>
 
 
 
 
     )
+    
 
 
 
@@ -81,11 +88,25 @@ const Public = () => {
 
 
                 </div>
-                <p className='flex items-center justify-center'>
-
-                    Hello, Chakka
-                </p>
+               
             </form>
+        )
+    }
+    function RenderMessage(){
+        return(
+            <div>
+                {messages.map((m, index) => {
+                    return <div className={`p-4 shadow-md round-md ${
+                        m.role === 'user'? 'bg-black' : 'bg-gray-200'
+                    }`}>
+                        {m.content}
+
+                        
+                        </div>
+                }
+                )
+            }
+            </div>
         )
     }
 
